@@ -31,7 +31,9 @@ export default function Home() {
         <Experience />
       </section>
       {/*skills */}
+       <section id='skills'className='snap-start'>
 
+       </section>
       {/* Projects */}
 
       {/* Contact me */}

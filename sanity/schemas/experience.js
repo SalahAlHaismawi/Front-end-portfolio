@@ -1,61 +1,56 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'pageinfo',
-  title: 'PageInfo',
+  name: 'experience',
+  title: 'Experience',
   type: 'document',
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "jobTitle",
+      title: "JobTitle",
       type: "string",
+      
     },
     {
-      name: "role",
-      title: "Role",
-      type: "string",
-    },
-    {
-      name: "heroImage",
-      title: "HeroImage",
-      type: "image",
-      options: {
-
-        hotspot: true,
-      },
-
-    },
-    {
-      name: "backgroundInformation",
-      title: "BackgroundInformation",
-      type: "string",
-    },
-    {
-      name: "profilePic",
-      title: "ProfilePic",
+      name: "companyImage",
+      title: "CompanyImage",
       type: "image",
     },
     {
-      name: "phoneNumber",
-      title: "PhoneNumber",
-      type: "string",
+      name: "company",
+      title: "Company",
+      type: "text",
+
+
     },
     {
-      name: "email",
-      title: "Email",
-      type: "string"
+      name: "dateStarted",
+      title: "DateStarted",
+      type: "date",
     },
     {
-      name: "address",
-      title: "Adderss",
-      type:"string"
+      name: "dateEnded",
+      title: "DateEnded",
+      type: "date",
     },
     {
-      name: "socials",
-      title: "Socials",
+      name: "isCurrentlyWorkingHere",
+      title: "IsCurrentlyWorkingHere",
+      type: "boolean",
+    },
+    {
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      of:[{type: "reference", to: {type:"skill"}}],
+    },
+    {
+      name: "points",
+      title: "Points",
       type:"array",
-      of:[{type: "reference", to: {types: "social"}}],
-    }
+      of: [{ type: "String"}],
+    },
+   
   ],
 
  

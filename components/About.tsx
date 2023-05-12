@@ -15,18 +15,7 @@ export default function About({}: Props) {
         About
       </h3>
 
-      <motion.img
-        initial={{
-          x: -200,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 1.2,
-        }}
-        whileInView={{ opacity: 1, x: 0 }}
-        src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
-        className="-mb-20 md:mb-0 mt-10 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600]"
-      />
+     
 
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold text-[#eee2dc]">

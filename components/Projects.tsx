@@ -1,54 +1,78 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
+import Image from 'next/image';
+
 import React from "react";
-import { motion } from "framer-motion";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import website1 from '../assets/website1.png'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 type Props = {};
 
 const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5];
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
-    >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-2xl">
-        Projects
-      </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#66fcf1]/80">
-        {projects.map((project, i) => (
-          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen">
-            <motion.img
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              transition={{ duration: 1.2 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              src="https://www.grouphealth.ca/wp-content/uploads/2018/05/placeholder-image.png"
-            />
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
-                <span className="underline">
-                  Case Study {i + 1} of {projects.length}
-                </span>{" "}
-                ups clone
-              </h4>
-              <p className="text-lg text-center md:text-left">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum
-                accusantium tenetur hic dolor, maxime sequi rem sunt ipsam omnis
-                consequuntur magni itaque repellat nulla ipsum iusto veritatis,
-                laborum aperiam alias.
-              </p>
-            </div>
-          </div>
-        ))}
+    
+    <div className="h-screen flex flex-col items-center justify-center overflow-hidden " >
+      <div className="max-w-4xl w-full">
+        
       </div>
-
-      <div className="w-full absolute top-[30%] bg-[#66fcf1]/20 left-0 h-[500px] -skew-y-12" />
-    </motion.div>
+      <Swiper
+        className="w-full"
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{
+          clickable: true,
+          bulletClass: 'custom-pagination-bullet', // Add custom class name for pagination bullet
+        }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+      >
+        
+          <SwiperSlide className="flex items-center justify-center">
+          <div className="flex justify-center">
+            <Image
+              src={website1}
+              alt="Image 1"
+              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <div className="flex justify-center">
+            <img
+              src='https://i.imgur.com/jVFgAKu.png'
+              alt="Image 1"
+              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <div className="flex justify-center">
+            <img
+              src='https://i.imgur.com/jVFgAKu.png'
+              alt="Image 1"
+              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
+            />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center">
+          <div className="flex justify-center">
+            <img
+              src='https://i.imgur.com/jVFgAKu.png'
+              alt="Image 1"
+              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
+            />
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 };
 

@@ -3,26 +3,47 @@
 import Image from 'next/image';
 
 import React from "react";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+
 import website1 from '../assets/website1.png'
 import website2 from '../assets/website2.png'
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 type Props = {};
-
-SwiperCore.use([Autoplay])
-SwiperCore.use([Navigation])
+const buttonStyle = {
+  padding: "15px",
+  borderRadius: "50%",
+  background: "red",
+  opacity: 0.7,
+  fontSize: "20px"
+};
 
 const Projects = (props: Props) => {
   return (
     
-    <div className="h-screen flex flex-col items-center justify-center overflow-hidden relative " >
-      <h3 className="absolute top-24  uppercase tracking-[20px] text-[#66fcf1] text-2xl">
+    <div className="h-screen flex flex-col items-center justify-center overflow-hidden " >
+        <style>
+        {`
+          :not(.awssld) {
+            --content-background-color: #0b0c10 !important;
+            --organic-arrow-color: #66fcf1 !important;
+            --control-bullet-color: #66fcf1 !important;
+          }
+        `}
+      </style>
+<AwesomeSlider 
+    >
+    <div>
+      <Image src={website2} alt="website1" />
+    </div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+  </AwesomeSlider>
+
+      
+      {/* <h3 className="absolute top-24  uppercase tracking-[20px] text-[#66fcf1] text-2xl">
         Projects
       </h3>
       <div className="max-w-4xl w-full">
@@ -59,15 +80,6 @@ const Projects = (props: Props) => {
               className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
             />
           </div>
-        </SwiperSlide>
-        {/* <SwiperSlide className="flex items-center justify-center">
-          <div className="flex justify-center">
-            <img
-              src='https://i.imgur.com/jVFgAKu.png'
-              alt="Image 1"
-              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
-            />
-          </div>
         </SwiperSlide> */}
         {/* <SwiperSlide className="flex items-center justify-center">
           <div className="flex justify-center">
@@ -78,10 +90,19 @@ const Projects = (props: Props) => {
             />
           </div>
         </SwiperSlide> */}
-        <div className='custom-navigation'>
+        {/* <SwiperSlide className="flex items-center justify-center">
+          <div className="flex justify-center">
+            <img
+              src='https://i.imgur.com/jVFgAKu.png'
+              alt="Image 1"
+              className="object-center w-full h-auto max-w-lg xl:max-w-3xl 2xl:max-w-4xl"
+            />
+          </div>
+        </SwiperSlide> */}
+        {/* <div className='custom-navigation'>
 
         </div>
-      </Swiper>
+      </Swiper> */}
     </div>
   );
 };

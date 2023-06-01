@@ -31,7 +31,7 @@ function Header({}: Props) {
           bgColor="transparent"
         />
 
-        <SocialIcon
+        {/* <SocialIcon
           url="https://facebook.com/jaketrent"
           fgColor="#66fcf1"
           bgColor="transparent"
@@ -41,7 +41,7 @@ function Header({}: Props) {
           url="https://twitter.com/jaketrent"
           fgColor="#66fcf1"
           bgColor="transparent"
-        />
+        /> */}
       </motion.div>
 
       <motion.div

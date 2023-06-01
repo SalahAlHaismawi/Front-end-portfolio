@@ -6,6 +6,8 @@ type Props = {};
 
 const Experience = (props: Props) => {
   return (
+    <div className="h-screen overflow-hidden">
+
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -17,12 +19,12 @@ const Experience = (props: Props) => {
       </h3>
       <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#66fcf1]/80">
         <ExperienceCard />   
-        <ExperienceCard />   
-        <ExperienceCard />   
-        <ExperienceCard />   
+        
+      
 
       </div>
     </motion.div>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import rocksolid from '../assets/rocksolid.png'
 type Props = {};
 
 const ExperienceCard = (props: Props) => {
@@ -15,33 +15,31 @@ const ExperienceCard = (props: Props) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-center"
-        src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
+        src="https://i.ibb.co/fkp1Jmz/rocksolid.png"
       />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">Ceo Of Papafam</h4>
-        <p className="font-bold text-2xl mt-1">PAPAFAM</p>
+        <h4 className="text-4xl font-light">RockSolid Solutions</h4>
+        <p className="font-bold text-2xl mt-1">RockSolid</p>
         <div className="flex space-x-2 my-2">
           <img
             className="h-10 w-10 rounded full"
-            src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
+            src="https://cdn-icons-png.flaticon.com/512/919/919832.png"
           />
           <img
             className="h-10 w-10 rounded full"
-            src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
+            src="https://cdn-icons-png.flaticon.com/512/919/919851.png"
           />
           <img
             className="h-10 w-10 rounded full"
-            src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png"
           />
         </div>
-        <p className="uppercase py-5 text-[#eee2dc]"> Started work... - Ended..</p>
+        <p className="uppercase py-5 text-[#eee2dc]"> 2020 - 2023</p>
 
         <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
+          <li>Developed Websites, Applications for clients around the world, but the majority where in the United Arab Emirates</li>
+          <li>Worked on Internal systems in the pharmaceutical industry</li>
+          
         </ul>
       </div>
     </article>

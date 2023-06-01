@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 type Props = {};
 
 function Header({}: Props) {
+  
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
       <motion.div
@@ -25,7 +26,7 @@ function Header({}: Props) {
       >
         {/*social icon */}
         <SocialIcon
-          url="https://instagram.com/jaketrent"
+          url="https://github.com/SalahAlHaismawi"
           fgColor="#66fcf1"
           bgColor="transparent"
         />
@@ -59,8 +60,10 @@ function Header({}: Props) {
         }}
         className="flex flex-row items-center text=gray-300 cursor-pointer"
       >
+        
         <SocialIcon
           className="cursor-point"
+          url="https://mail.google.com/mail/?view=cm&to=salah322s123@gmail.com"
           network="email"
           fgColor="#66fcf1"
           bgColor="transparent"

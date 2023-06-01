@@ -49,7 +49,7 @@ export default function Home() {
       <Link href="#hero">
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <img className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src='https://i.imgur.com/e2yvd6a.png'/>
+            <img className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer' src='https://cdn-icons-png.flaticon.com/512/5973/5973800.png'/>
           </div>
         </footer>
       </Link>

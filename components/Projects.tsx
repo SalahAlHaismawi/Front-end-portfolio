@@ -8,18 +8,35 @@ import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import website1 from '../assets/website1.png'
 import website2 from '../assets/website2.png'
 import website3 from '../assets/website3.png'
-
+import css from '../assets/css.png'
+import nodeicon from '../assets/node-js.png'
 
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+
 type Props = {};
-const buttonStyle = {
-  padding: "15px",
-  borderRadius: "50%",
-  background: "red",
-  opacity: 0.7,
-  fontSize: "20px"
-};
+
+
+const projects = [
+  {
+    image: website2,
+    alt: "Website 1",
+    description: "Project 1 Description",
+    languages: ["html5", "css3"],
+  },
+  {
+    image: website1,
+    alt: "Website 2",
+    description: "Project 2 Description",
+    languages: ["html5", "css3", "javascript"],
+  },
+  {
+    image: website3,
+    alt: "Website 3",
+    description: "Project 3 Description",
+    languages: ["html5", "css3", "javascript", "react"],
+  },
+];
 
 const Projects = (props: Props) => {
   return (
@@ -39,14 +56,14 @@ const Projects = (props: Props) => {
       </style>
 <AwesomeSlider 
     animation="cubeAnimation">
-    <div>
+    <div className='relative group'>
       <Image src={website2} alt="website1" />
+     
     </div>
     <div><Image src={website1} alt="website1" /></div>
     <div>
     <Image src={website3} alt="website1" />
     </div>
-    <div>4</div>
   </AwesomeSlider>
 
       

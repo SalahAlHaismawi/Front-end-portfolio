@@ -29,7 +29,7 @@ const ContactMe = (props: Props) => {
         <div className="flex flex-col space-y-10 mt-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#66fcf1] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">0123980923</p>
+            <p className="text-2xl">0139996340</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
@@ -42,13 +42,13 @@ const ContactMe = (props: Props) => {
             <p className="text-2xl">Kuala Lumpur, Malaysia</p>
           </div>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto max-w-md">
           <div className="flex space-x-2">
-            <input  placeholder="Name" className="contactInput" type="text" />
-            <input  placeholder="Email" className="contactInput" type="email" />
+            <input  placeholder="Name" className="contactInput w-full" type="text" />
+            <input  placeholder="Email" className="contactInput w-full" type="email" />
           </div>
-          <input  placeholder="Subject" className="contactInput" type="text" />
-          <textarea  placeholder="Message" className="contactInput" />
+          <input  placeholder="Subject" className="contactInput w-full" type="text" />
+          <textarea  placeholder="Message" className="contactInput w-full" />
           <button className="bg-[#66fcf1] py-5 px-10 rounded-md text-black font-bold text-lg">
             Submit
           </button>

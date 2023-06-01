@@ -3,9 +3,11 @@
 import Image from 'next/image';
 
 import React from "react";
+import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 
 import website1 from '../assets/website1.png'
 import website2 from '../assets/website2.png'
+import website3 from '../assets/website3.png'
 
 
 import AwesomeSlider from 'react-awesome-slider';
@@ -22,7 +24,10 @@ const buttonStyle = {
 const Projects = (props: Props) => {
   return (
     
-    <div className="h-screen flex flex-col items-center justify-center overflow-hidden " >
+    <div className="h-screen flex flex-col items-center justify-center overflow-hidden relative " >
+      <h3 className="absolute top-24  uppercase tracking-[20px] text-[#66fcf1] text-2xl pb-10">
+        Projects
+      </h3>
         <style>
         {`
           :not(.awssld) {
@@ -33,12 +38,14 @@ const Projects = (props: Props) => {
         `}
       </style>
 <AwesomeSlider 
-    >
+    animation="cubeAnimation">
     <div>
       <Image src={website2} alt="website1" />
     </div>
-    <div>2</div>
-    <div>3</div>
+    <div><Image src={website1} alt="website1" /></div>
+    <div>
+    <Image src={website3} alt="website1" />
+    </div>
     <div>4</div>
   </AwesomeSlider>
 

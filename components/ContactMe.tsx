@@ -50,7 +50,7 @@ const ContactMe = (props: Props) => {
             <input {...register('email')}  placeholder="Email" className="contactInput w-full" type="email" />
           </div>
           <input {...register('subject')}  placeholder="Subject" className="contactInput w-full" type="text" />
-          <textarea {...register('subject')}  placeholder="Message" className="contactInput w-full" />
+          <textarea {...register('message')}  placeholder="Message" className="contactInput w-full" />
           <button className="bg-[#66fcf1] py-5 px-10 rounded-md text-black font-bold text-lg">
             Submit
           </button>

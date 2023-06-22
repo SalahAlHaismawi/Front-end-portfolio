@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
 
       
-      <section id="hero" className='snap-center'>
+      <section id="hero" className='snap-center snap-mandatory'>
       <Hero />
       </section>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Lottie from 'react-lottie-player'
+// import Lottie from 'react-lottie-player'
 import gif from '../assets/webgif.json'
 type Props = {};
 
@@ -20,20 +20,17 @@ export default function About({}: Props) {
       </h3>
 
       
-      <Lottie
-      loop
-      animationData={gif}
-      play
-      style={{ width: 250, height: 250 }}
-      className="-mb-10 md:mb-10 mt-10 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600]"
-    />
+    {/*  <Lottie*/}
+    {/*  loop*/}
+    {/*  animationData={gif}*/}
+    {/*  play*/}
+    {/*  style={{ width: 250, height: 250 }}*/}
+    {/*  className="-mb-10 md:mb-10 mt-10 flex-shrink-0 w-36 h-36 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600]"*/}
+    {/*/>*/}
       <div className=" space-y-10 px-0 md:px-10">
-        <p className="text-base text-[#eee2dc] text-left">
-          I am a highly passionate software developer who seamlessly merges the
-          artistic flair of a UI designer with the technical expertise of a
-          software engineer. With a keen eye for aesthetics and a solid
-          understanding of coding, I create captivating and functional user
-          experiences that bridge the gap between creativity and technology.
+        <p className="text-base text-[#eee2dc] text-center">
+          Hello! I'm Salah Fayeq Alhaismawi, a dedicated Full-Stack Developer and AI Enthusiast. With a passion for creating dynamic and user-friendly websites and applications, I specialize in building seamless full-stack solutions for both web and mobile platforms. My expertise spans across the latest technologies and frameworks, enabling me to craft robust and scalable applications.
+            Driven by my enthusiasm for artificial intelligence, I am committed to integrating AI into practical and accessible software solutions. Whether it's developing sophisticated web applications or enhancing mobile user experiences, my goal is to leverage the power of AI to solve real-world problems and make technology more intuitive and impactful for users.
         </p>
       </div>
     </motion.div>

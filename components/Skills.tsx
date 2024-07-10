@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../contentful";  // Ensure this path is correct and client is properly configured
-import { EntryCollection } from "contentful";
 
 type Skill = {
   name: string;
@@ -8,20 +7,20 @@ type Skill = {
   proficiency: string;
 };
 
-type ContentfulImage = {
-  fields: {
-    file: {
-      url: string;
+type ContentfulResponse = {
+  items: {
+    fields: {
+      name: string;
+      image: {
+        fields: {
+          file: {
+            url: string;
+          };
+        };
+      } | null;
+      proficiency: string;
     };
-  };
-};
-
-type ContentfulSkill = {
-  fields: {
-    name: string;
-    image: ContentfulImage | null;
-    proficiency: string;
-  };
+  }[];
 };
 
 function Skills() {
@@ -30,12 +29,10 @@ function Skills() {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response: EntryCollection<ContentfulSkill> = await client.getEntries({
-          content_type: 'skills',
-        });
+        const response: ContentfulResponse = await client.getEntries({ content_type: 'skills' });
         const fetchedSkills = response.items.map((item) => ({
           name: item.fields.name,
-          image: item.fields.image ? item.fields.image.fields.file.url : '',
+          image: item.fields.image ? item.fields.image.fields.file.url : '',  // Adjust based on your Contentful image structure
           proficiency: item.fields.proficiency,
         }));
         setSkills(fetchedSkills);
@@ -49,7 +46,7 @@ function Skills() {
 
   return (
     <div className="flex relative flex-col text-center items-center md:text-left xl:flex-row max-w-full xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Full-Stack Skills</h3>
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl ">Full-Stack Skills</h3>
       <div className="grid grid-cols-3 gap-7 w-full place-items-center mt-5 p-4">
         {skills.map((skill, index) => (
           <div key={index} className="group relative flex cursor-pointer">

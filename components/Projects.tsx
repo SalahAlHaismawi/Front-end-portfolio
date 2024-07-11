@@ -1,5 +1,7 @@
+/// <reference path="./react-slick.d.ts" />
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
+
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -92,14 +94,14 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="w-full h-full pt-10">
               <div className="bg-[#1F2833] h-full rounded-xl p-6 flex flex-col justify-between items-center shadow-lg">
-                  <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
-                  <Slider {...imageSettings} className="w-full  mb-4">
-                    {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
-                      <div key={imgIndex} className="flex items-center justify-center w-full h-[200px] lg:h-[500px]">
-                        <img src={image} alt={`Project ${index + 1} Image ${imgIndex + 1}`} className="rounded-xl object-contain max-w-full max-h-full mx-auto"/>
-                      </div>
-                    )) : <p>No images available</p>}
-                  </Slider>
+                <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
+                <Slider {...imageSettings} className="w-full mb-4">
+                  {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
+                    <div key={imgIndex} className="">
+                      <img src={image} alt={`Project ${index + 1} Image ${imgIndex + 1}`} className="rounded-xl object-cover w-full h-full"/>
+                    </div>
+                  )) : <p>No images available</p>}
+                </Slider>
                 <div className="flex flex-col items-center">
                   <div className="mb-4">
                     <p className="text-md text-left">{project.description}</p>

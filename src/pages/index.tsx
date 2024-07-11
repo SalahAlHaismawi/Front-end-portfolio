@@ -6,6 +6,7 @@ import Projects from '../../components/Projects';
 import Skills from '../../components/Skills';
 import ContactMe from '../../components/ContactMe';
 import Link from 'next/link';
+import MachineLearningSkills from "../../components/MachineLearningSkills";
 
 
 
@@ -36,8 +37,11 @@ export default function Home() {
 
 
       {/*skills */}
-       { <section id='skills'className='snap-start'>
+       { <section id='skills' className='snap-start'>
         <Skills />
+       </section> }
+         { <section id='machinelearningskills' className='snap-start'>
+        <MachineLearningSkills />
        </section> }
       {/* Projects */}
         <section id='projects' className='snap-start'>

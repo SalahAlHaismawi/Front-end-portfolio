@@ -2,16 +2,16 @@ import Link from "next/link";
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
-
+import Image from "next/image";
+import Personal from '../public/personal.jpg'
 type Props = {};
 
 export default function Hero({}: Props) {
   const [text, count] = useTypewriter({
     words: [
       "Hi, The Name's Salah AlHaismawi",
-      "UI/UX Design",
-      "Front-End",
-      "Back-End",
+      "Full-Stack Developer",
+      "Machine Learning Enthusiast"
     ],
     loop: true,
     delaySpeed: 2000,
@@ -19,15 +19,19 @@ export default function Hero({}: Props) {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden w-screen">
       <BackgroundCircles />
-      <img
+      <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://avatars.githubusercontent.com/u/77612931?s=400&u=2e83f03bb951a089f9c77804dcebf5dacd72a1c6&v=4"
+        src={Personal}
+        alt={'test'}
+        width={200}
+        height={200}
+
       />
-      <div className="z-20">
-      <h2 className="text-sm uppercase text-[#eee2dc] pb-2 tracking-[15px]">Software Engineer</h2>
-      <div className="h-[100px]">
-      <h1>
-        <span className="text-4xl lg:text-6xl font-semibold px-10 text-[#66fcf1] ">{text}</span>
+      <div className="z-20 w-full">
+      <h2 className="text-sm uppercase text-[#eee2dc] pb-2 tracking-[15px]">Full Stack Software Engineer</h2>
+      <div className="">
+      <h1 className=''>
+        <span className="text-xl lg:text-6xl font-semibold px-10 text-[#66fcf1] text-justify ">{text}</span>
         <Cursor cursorColor="#F7AB0A" />
       </h1>
 
@@ -35,12 +39,13 @@ export default function Hero({}: Props) {
       <div className="mt-10">
         <Link href="#about"><button className="heroButton">About</button></Link>
        
-        {/* <Link href="#experience"><button className="heroButton">Experience</button></Link> */}
-        
+         <Link href="#skills"><button className="heroButton">Full-Stack Skills</button></Link>
+          <Link href="#machinelearningskills"><button className="heroButton">Machine-Learning Skills Skills</button></Link>
+
        
 
         
-        <Link href="projects"><button className="heroButton">Projects</button></Link>
+        <Link href="#projects"><button className="heroButton">Projects</button></Link>
 
      
       </div>

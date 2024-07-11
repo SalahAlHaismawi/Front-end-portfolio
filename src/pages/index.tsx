@@ -7,61 +7,65 @@ import Skills from '../../components/Skills';
 import ContactMe from '../../components/ContactMe';
 import Link from 'next/link';
 import MachineLearningSkills from "../../components/MachineLearningSkills";
-
+import { Analytics } from "@vercel/analytics/react"
 
 
 
 
 export default function Home() {
   return (
-    <div className='bg-[#0b0c10] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#66fcf1]/80'>
-      <Head>
-       <title>Salah portfolio</title>
-      </Head>
-      
-      <Header />
+      <Analytics>
+          <div
+              className='bg-[#0b0c10] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#66fcf1]/80'>
+              <Head>
+                  <title>Salah portfolio</title>
+              </Head>
 
-      
-      <section id="hero" className='snap-center snap-mandatory'>
-      <Hero />
-      </section>
-
-      {/* About */}
-      <section id="about" className='snap-center'>
-      <About />
-      </section>
-      {/*=Experiences */}
-      {/*{ <section id='experience' className='snap-center'>*/}
-
-      {/*</section> }*/}
+              <Header/>
 
 
-      {/*skills */}
-       { <section id='skills' className='snap-start'>
-        <Skills />
-       </section> }
-         { <section id='machinelearningskills' className='snap-start'>
-        <MachineLearningSkills />
-       </section> }
-      {/* Projects */}
-        <section id='projects' className='snap-start'>
-          <Projects />
-        </section>
-      {/* Contact me */}
-      <section id='contact' className='snap-start'>
-        <ContactMe />
-      </section>
-      <Link href="#hero">
-        <footer className='sticky bottom-20 w-full cursor-pointer'>
-            <div className='flex items-center justify-center'>
-                <img
-                    className="h-10 w-10 rounded-full hover:grayscale-1 hover:scale-150 transform transition duration-300 ease-in-out cursor-pointer"
-                    src="https://cdn-icons-png.flaticon.com/512/5973/5973800.png"
-                />
+              <section id="hero" className='snap-center snap-mandatory'>
+                  <Hero/>
+              </section>
 
-            </div>
-        </footer>
-      </Link>
-    </div>
+              {/* About */}
+              <section id="about" className='snap-center'>
+                  <About/>
+              </section>
+              {/*=Experiences */}
+              {/*{ <section id='experience' className='snap-center'>*/}
+
+              {/*</section> }*/}
+
+
+              {/*skills */}
+              {<section id='skills' className='snap-start'>
+                  <Skills/>
+              </section>}
+              {<section id='machinelearningskills' className='snap-start'>
+                  <MachineLearningSkills/>
+              </section>}
+              {/* Projects */}
+              <section id='projects' className='snap-start'>
+                  <Projects/>
+              </section>
+              {/* Contact me */}
+              <section id='contact' className='snap-start'>
+                  <ContactMe/>
+              </section>
+              <Link href="#hero">
+                  <footer className='sticky bottom-20 w-full cursor-pointer'>
+                      <div className='flex items-center justify-center'>
+                          <img
+                              className="h-10 w-10 rounded-full hover:grayscale-1 hover:scale-150 transform transition duration-300 ease-in-out cursor-pointer"
+                              src="https://cdn-icons-png.flaticon.com/512/5973/5973800.png"
+                          />
+
+                      </div>
+                  </footer>
+              </Link>
+          </div>
+      </Analytics>
+
   );
 };

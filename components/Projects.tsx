@@ -1,7 +1,7 @@
 /// <reference path="./react-slick.d.ts" />
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
-
+/* tslint:disable */
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

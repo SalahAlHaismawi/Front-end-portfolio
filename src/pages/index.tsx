@@ -7,14 +7,12 @@ import Skills from '../../components/Skills';
 import ContactMe from '../../components/ContactMe';
 import Link from 'next/link';
 import MachineLearningSkills from "../../components/MachineLearningSkills";
-import { Analytics } from "@vercel/analytics/react"
 
 
 
 
 export default function Home() {
   return (
-      <Analytics>
           <div
               className='bg-[#0b0c10] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#66fcf1]/80'>
               <Head>
@@ -65,7 +63,6 @@ export default function Home() {
                   </footer>
               </Link>
           </div>
-      </Analytics>
 
   );
 };

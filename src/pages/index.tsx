@@ -52,7 +52,7 @@ export default function Home() {
         <ContactMe />
       </section>
       <Link href="#hero">
-        <footer className='sticky bottom-20 w-full cursor-pointer'>
+        <footer className='sticky bottom-32 w-full cursor-pointer'>
             <div className='flex items-center justify-center'>
                 <img
                     className="h-10 w-10 rounded-full hover:grayscale-1 hover:scale-150 transform transition duration-300 ease-in-out cursor-pointer"

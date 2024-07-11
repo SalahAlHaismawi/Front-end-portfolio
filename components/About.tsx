@@ -17,7 +17,7 @@ export default function About({}: Props) {
         transition={{ duration: 1.5 }}
         className="flex flex-col md:flex-row h-screen text-center md:text-left px-5 mx-auto items-center justify-center"
       >
-          <div className="w-full flex flex-col md:flex-row items-start justify-center md:space-x-10 ">
+          <div className="w-full flex flex-col md:flex-row items-start justify-center md:space-x-10 pt-5 ">
               <div className="w-full md:w-1/2 flex items-center justify-center rounded-xl">
                   <Image src={Setup} alt="Setup" className="rounded-xl"/>
               </div>

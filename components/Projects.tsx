@@ -72,9 +72,10 @@ const Projects = () => {
   };
 
   return (
-      <div className="relative flex flex-col items-center justify-center min-h-screen h-screen py-10 overflow-hidden">
-        <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
-
+      <div className="relative flex flex-col items-center justify-center min-h-screen h-screen  overflow-hidden">
+        <div className="flex flex-col items-center justify-center pt-12">
+          <h3 className="uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
+        </div>
         <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
           <h3 className='text-xs text-center underline italic'>Swipe To Explore Projects.</h3>
 
@@ -89,7 +90,7 @@ const Projects = () => {
                       <Slider {...imageSettings} className="w-full mb-4 p-4">
                         {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
                             <div key={imgIndex}
-                                 className="flex items-center justify-center overflow-hidden" style={{height: '200px'}}>
+                                 className="flex items-center justify-center overflow-hidden" style={{height: '150px'}}>
                               <img src={image} alt={`Project ${index + 1} Image ${imgIndex + 1}`}
                                    className="rounded-xl object-contain mx-auto"/>
                             </div>

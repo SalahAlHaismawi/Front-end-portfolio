@@ -45,8 +45,10 @@ function Skills() {
   }, []);
 
   return (
-    <div className="flex relative flex-col text-center items-center md:text-left xl:flex-row max-w-full xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto">
-      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Machine-Learning Skills</h3>
+      <div className="relative flex flex-col items-center justify-start min-h-screen h-full py-10 overflow-hidden">
+        <div className="pt-20"> {/* Add padding to the top to avoid overlap */}
+          <h3 className="uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-4xl text-center">Machine-Learning Skills</h3>
+        </div>
       <div className="grid grid-cols-3 gap-7 w-full place-items-center mt-5 lg:mt-10 p-4">
         {skills.map((skill, index) => (
           <div key={index} className="group relative flex cursor-pointer">

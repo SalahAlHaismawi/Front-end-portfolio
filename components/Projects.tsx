@@ -56,7 +56,7 @@ const Projects = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerPadding: '20px',
+          centerPadding: '35px',
         },
       },
     ],
@@ -74,15 +74,16 @@ const Projects = () => {
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-screen py-10 overflow-hidden">
         <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
-        <h3 className=' absolute top-36 text-xs text-center underline'>Swipe To Explore Projects.</h3>
 
         <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
+          <h3 className=' text-xs text-center underline italic'>Swipe To Explore Projects.</h3>
+
           <Slider {...cardSettings} className="w-full h-full">
             {projects.map((project, index) => (
                 <div key={index} className="p-2 scale-90 transition duration-300 ease-in-out hover:scale-100">
                   <div
-                      className="bg-[#1F2833] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl"
-                      style={{ maxWidth: '800px', width: '100%', margin: '0 10px' }}>
+className="bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl"
+                      style={{maxWidth: '800px', width: '100%', margin: '0 10px'}}>
                     <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
                     <Slider {...imageSettings} className="w-[95%] mb-4 p-4">
                       {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
@@ -97,11 +98,13 @@ const Projects = () => {
                       <p className="mb-4 text-sm" style={{hyphens: 'auto'}} lang="en">
                         {project.description}
                       </p>
-                      <div>
-                        <h1 className='text-left font-bold pb-2'>Tech Stack:</h1>
-                        <div className="grid grid-cols-5 gap-5">
+                      <div className="flex flex-col items-start w-full">
+                        <h1 className='text-left font-bold pb-2'>Technical Stack:</h1>
+                        <div
+                            className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center w-full">
                           {project.techStack && project.techStack.length > 0 ? project.techStack.map((tech, techIndex) => (
-                              <img key={techIndex} src={tech} alt="Tech Stack Icon" className="h-10 w-10 rounded-full"/>
+                              <img key={techIndex} src={tech} alt="Tech Stack Icon"
+                                   className="h-10 w-10 rounded-full"/>
                           )) : <p>No tech stack available</p>}
                         </div>
                       </div>

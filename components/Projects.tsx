@@ -72,49 +72,51 @@ const Projects = () => {
   };
 
   return (
-      <div className="relative flex flex-col items-center justify-center min-h-screen h-screen py-10 overflow-hidden">
-        <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
+    <div className="relative flex flex-col items-center justify-center min-h-screen h-screen py-10 overflow-hidden">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
 
-        <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
-          <h3 className=' text-xs text-center underline italic'>Swipe To Explore Projects.</h3>
+      <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
+        <h3 className='text-xs text-center underline italic'>Swipe To Explore Projects.</h3>
 
-          <Slider {...cardSettings} className="w-full h-full">
-            {projects.map((project, index) => (
-                <div key={index} className="p-2 scale-90 transition duration-300 ease-in-out hover:scale-100">
-                  <div
-className="bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl"
-                      style={{maxWidth: '800px', width: '100%', margin: '0 10px'}}>
-                    <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
-                    <Slider {...imageSettings} className="w-[95%] mb-4 p-4">
-                      {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
-                          <div key={imgIndex}
-                               className="flex items-center justify-center overflow-hidden">
-                            <img src={image} alt={`Project ${index + 1} Image ${imgIndex + 1}`}
-                                 className="rounded-xl object-contain mx-auto"/>
-                          </div>
-                      )) : <p>No images available</p>}
-                    </Slider>
-                    <div className="flex flex-col items-center w-full">
-                      <p className="mb-4 text-sm" style={{hyphens: 'auto'}} lang="en">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-col items-start w-full">
-                        <h1 className='text-left font-bold pb-2'>Technical Stack:</h1>
-                        <div
-                            className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center w-full">
-                          {project.techStack && project.techStack.length > 0 ? project.techStack.map((tech, techIndex) => (
-                              <img key={techIndex} src={tech} alt="Tech Stack Icon"
-                                   className="h-10 w-10 rounded-full"/>
-                          )) : <p>No tech stack available</p>}
-                        </div>
+        <Slider {...cardSettings} className="w-full h-full">
+          {projects.map((project, index) => (
+            <div key={index} className="p-2 flex-shrink-0 flex-grow-0" style={{ width: '300px', height: '500px' }}>
+              <div
+                className="bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl group h-full transition-transform duration-500 ease-in-out transform hover:scale-105 hover:h-auto hover:w-auto"
+                style={{ margin: '0 10px' }}>
+                <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
+                <div className="w-full flex-grow">
+                  <Slider {...imageSettings} className="w-full mb-4 p-4">
+                    {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
+                      <div key={imgIndex}
+                        className="flex items-center justify-center overflow-hidden" style={{ height: '200px' }}>
+                        <img src={image} alt={`Project ${index + 1} Image ${imgIndex + 1}`}
+                          className="rounded-xl object-contain mx-auto"/>
                       </div>
+                    )) : <p>No images available</p>}
+                  </Slider>
+                </div>
+                <div className="flex flex-col items-center w-full flex-grow-0">
+                  <p className="mb-4 text-sm lg:text-2xl overflow-hidden transition-all duration-500 max-h-[100px] group-hover:max-h-[300px]" style={{ hyphens: 'auto' }} lang="en">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-col items-start w-full">
+                    <h1 className='text-left font-bold pb-2 text-sm lg:text-lg'>Technical Stack:</h1>
+                    <div
+                      className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center w-full">
+                      {project.techStack && project.techStack.length > 0 ? project.techStack.map((tech, techIndex) => (
+                        <img key={techIndex} src={tech} alt="Tech Stack Icon"
+                          className="h-10 w-10 rounded-full lg:h-20 lg:w-20"/>
+                      )) : <p>No tech stack available</p>}
                     </div>
                   </div>
                 </div>
-            ))}
-          </Slider>
-        </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
+    </div>
   );
 };
 

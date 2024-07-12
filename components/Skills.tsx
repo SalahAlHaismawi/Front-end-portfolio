@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../contentful";  // Ensure this path is correct and client is properly configured
 
-type Skill = {
+type MachineLearningSkill = {
   name: string;
   image: string;  // URL to the image
   proficiency: string;
@@ -24,7 +24,7 @@ type ContentfulResponse = {
 };
 
 function Skills() {
-  const [skills, setSkills] = useState<Skill[]>([]);
+  const [skills, setSkills] = useState<MachineLearningSkill[]>([]);
 
   useEffect(() => {
     const fetchSkills = async () => {

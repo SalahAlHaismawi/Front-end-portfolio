@@ -98,13 +98,13 @@ const Projects = () => {
                       </Slider>
                     </div>
                     <div className="flex flex-col items-center w-full flex-grow-0">
-                      <p className="mb-4 text-sm lg:text-lg overflow-hidden transition-all duration-500 max-h-[100px] group-hover:max-h-[300px]"
+                      <p className="mb-4 text-sm lg:text-md overflow-hidden transition-all duration-500 max-h-[100px] group-hover:max-h-[300px]"
                          style={{hyphens: 'auto'}} lang="en">
                         {project.description}
                       </p>
                       <div
                           className="flex flex-col items-start w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
-                        <h1 className='text-left font-bold pb-2 text-sm lg:text-lg'>Technical Stack:</h1>
+                        <h1 className='text-left font-bold pb-2 text-sm'>Technical Stack:</h1>
                         <div
                             className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center w-full">
                           {project.techStack && project.techStack.length > 0 ? project.techStack.map((tech, techIndex) => (

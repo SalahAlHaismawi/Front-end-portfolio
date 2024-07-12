@@ -108,7 +108,7 @@ const Projects = () => {
                             className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 justify-items-center w-full">
                           {project.techStack && project.techStack.length > 0 ? project.techStack.map((tech, techIndex) => (
                               <img key={techIndex} src={tech} alt="Tech Stack Icon"
-                                   className="h-10 w-10 rounded-full lg:h-15 lg:w-15"/>
+                                   className="h-10 w-10 rounded-full "/>
                           )) : <p>No tech stack available</p>}
                         </div>
                       </div>

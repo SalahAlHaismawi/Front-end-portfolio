@@ -13,3 +13,17 @@
         background-color: aquamarine !important;
     }
 }
+
+/* Adding custom styles for slick arrows */
+.slick-prev,
+.slick-next {
+  color: #20f6ea; /* Change to your desired color */
+  font-size: 24px; /* Adjust size as needed */
+}
+
+/* If arrows are images and you want to apply a filter to change color */
+.slick-prev,
+.slick-next {
+  filter: invert(0.5) sepia(1) saturate(6) hue-rotate(180deg);
+
+}

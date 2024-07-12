@@ -9,7 +9,7 @@ type Props = {};
 export default function About({}: Props) {
   return (
     <div className='relative flex flex-col h-screen text-center md:text-left w-full mx-auto items-center justify-center gap-5'>
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">About</h3>
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">About</h3>
 
       <motion.div
         initial={{ opacity: 0 }}

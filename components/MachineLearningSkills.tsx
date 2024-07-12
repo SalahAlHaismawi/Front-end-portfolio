@@ -46,7 +46,7 @@ function Skills() {
 
   return (
     <div className="flex relative flex-col text-center items-center md:text-left xl:flex-row max-w-full xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Machine-Learning Skills</h3>
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Machine-Learning Skills</h3>
       <div className="grid grid-cols-3 gap-7 w-full place-items-center mt-5 p-4">
         {skills.map((skill, index) => (
           <div key={index} className="group relative flex cursor-pointer">

@@ -73,7 +73,7 @@ const Projects = () => {
 
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-screen py-10 overflow-hidden">
-        <h3 className="absolute top-24 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
+        <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
 
         <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
           <h3 className='text-xs text-center underline italic'>Swipe To Explore Projects.</h3>

@@ -97,7 +97,7 @@ const Projects = () => {
                       </Slider>
                     </div>
                     <div className="flex flex-col items-center w-full flex-grow-0">
-                      <p className="mb-4 text-sm lg:text-xl overflow-hidden transition-all duration-500 max-h-[100px] group-hover:max-h-[300px]"
+                      <p className="mb-4 text-sm lg:text-lg overflow-hidden transition-all duration-500 max-h-[100px] group-hover:max-h-[300px]"
                          style={{hyphens: 'auto'}} lang="en">
                         {project.description}
                       </p>

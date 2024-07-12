@@ -84,7 +84,7 @@ const Projects = () => {
                   <div
                       className="bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl group h-full transition-transform duration-500 ease-in-out transform hover:scale-105 hover:h-auto hover:w-auto"
                       style={{margin: '0 10px'}}>
-                    <h3 className="text-2xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
+                    <h3 className="text-xl lg:3xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
                     <div className="w-full flex-grow">
                       <Slider {...imageSettings} className="w-full mb-4 p-4">
                         {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (

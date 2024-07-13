@@ -73,20 +73,20 @@ const Projects = () => {
 
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-screen  overflow-hidden">
-        <div className="flex flex-col items-center justify-center pt-12">
-          <h3 className="uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Projects</h3>
-        </div>
-        <div className='w-[90%] h-[85%] flex flex-col items-center justify-center overflow-hidden pt-16'>
-          <h3 className='text-xs text-center underline italic'>Swipe To Explore Projects.</h3>
+        <div className='flex flex-col items-center'>
+          <h3 className="pt-14 tracking-[20px] text-[#66fcf1] text-center text-lg  lg:text-3xl">PROJECTS</h3>
 
-          <Slider {...cardSettings} className="w-full h-full">
+        </div>
+        <div className='w-full h-full flex flex-col items-center justify-center overflow-hidden '>
+
+          <Slider {...cardSettings} className="w-full  ">
             {projects.map((project, index) => (
-                <div key={index} className="p-2 flex-shrink-0 flex-grow-0" style={{width: '300px', height: '500px'}}>
+                <div key={index} className="p-2 flex-shrink-0 flex-grow-0 " >
                   <div
-                      className="bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl group h-full transition-transform duration-500 ease-in-out transform hover:scale-105 hover:h-auto hover:w-auto"
+                      className="h-full bg-gradient-to-r from-[#1F2833] to-[#2b4053] via-[#1b475e] p-6 flex flex-col justify-between items-center shadow-lg rounded-xl group transition-transform duration-500 ease-in-out transform hover:scale-105 hover:h-auto hover:w-auto"
                       style={{margin: '0 10px'}}>
                     <h3 className="text-xl lg:3xl font-bold text-[#66fcf1] mb-4">{project.name}</h3>
-                    <div className="w-full flex-grow">
+                    <div className="w-full flex-grow h-full">
                       <Slider {...imageSettings} className="w-full mb-4 p-4">
                         {project.images && project.images.length > 0 ? project.images.map((image, imgIndex) => (
                             <div key={imgIndex}

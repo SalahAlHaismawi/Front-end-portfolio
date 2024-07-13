@@ -23,11 +23,13 @@ export default function Home() {
 
 
               <section id="hero" className='snap-center snap-mandatory'>
+
                   <Hero/>
               </section>
 
               {/* About */}
               <section id="about" className='snap-center'>
+
                   <About/>
               </section>
               {/*=Experiences */}
@@ -49,6 +51,7 @@ export default function Home() {
               </section>
               {/* Contact me */}
               <section id='contact' className='snap-start'>
+
                   <ContactMe/>
               </section>
               {/*<Link href="#hero">*/}

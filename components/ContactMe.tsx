@@ -21,6 +21,7 @@ const ContactMe = (props: Props) => {
     const mailtoLink = `mailto:salah322s1@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`)}`;
     window.location.href = mailtoLink;
   };
+  // latest
 
   return (
     <div className="h-screen flex relative flex-col text-center md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">

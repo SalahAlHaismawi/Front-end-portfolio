@@ -63,7 +63,7 @@ function Header({}: Props) {
         
         <SocialIcon
           className="cursor-point"
-          url="https://mail.google.com/mail/?view=cm&to=salah322s1@gmail.com"
+            url="mailto:salah322s1@gmail.com"
           network="email"
           fgColor="#66fcf1"
           bgColor="transparent"

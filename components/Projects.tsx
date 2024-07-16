@@ -74,7 +74,7 @@ const Projects = () => {
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-screen  overflow-hidden">
         <div className='flex flex-col items-center'>
-          <h3 className="pt-14 tracking-[20px] text-[#66fcf1] text-center text-lg  lg:text-3xl">PROJECTS</h3>
+          <h3 className="pt-14 tracking-[20px] text-[#66fcf1] text-center text-sm  lg:text-3xl">PROJECTS</h3>
 
         </div>
         <div className='w-full h-full flex flex-col items-center justify-center overflow-hidden '>

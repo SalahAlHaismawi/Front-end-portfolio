@@ -43,7 +43,7 @@ const ContactMe = (props: Props) => {
       className="flex relative flex-col text-center md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
       style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
     >
-      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Contact</h3>
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-md lg:text-3xl">Contact</h3>
       <div className="flex flex-col space-y-10">
         <div className="flex flex-col space-y-10 mt-10">
           <div className="flex items-center space-x-5 justify-center">

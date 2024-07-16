@@ -12,26 +12,32 @@ type Props = {};
 
 const ContactMe = (props: Props) => {
   const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const [viewportHeight, setViewportHeight] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setViewportHeight(window.innerHeight);
+
+      const handleResize = () => {
+        setViewportHeight(window.innerHeight);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     const subject = encodeURIComponent(formData.subject);
     const body = encodeURIComponent(`Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`);
     const mailtoLink = `mailto:salah322s1@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoLink;
+    }
   };
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div

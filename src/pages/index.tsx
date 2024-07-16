@@ -7,6 +7,7 @@ import Skills from '../../components/Skills';
 import ContactMe from '../../components/ContactMe';
 import Link from 'next/link';
 import MachineLearningSkills from "../../components/MachineLearningSkills";
+import ExperienceCard from "../../components/ExperienceCard";
 
 
 
@@ -32,10 +33,7 @@ export default function Home() {
 
                   <About/>
               </section>
-              {/*=Experiences */}
-              {/*{ <section id='experience' className='snap-center'>*/}
 
-              {/*</section> }*/}
 
 
               {/*skills */}

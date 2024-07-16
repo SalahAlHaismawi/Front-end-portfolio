@@ -1,75 +1,92 @@
-import React, { useState, useEffect } from "react";
-import { client } from "../contentful";  // Ensure this path is correct and client is properly configured
+import React, { useState, useEffect } from 'react';
+import { PhoneIcon, MapIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
-type MachineLearningSkill = {
+type Inputs = {
   name: string;
-  image: string;  // URL to the image
-  proficiency: string;
+  email: string;
+  subject: string;
+  message: string;
 };
+type Props = {};
 
-type ContentfulResponse = {
-  items: {
-    fields: {
-      name: string;
-      image: {
-        fields: {
-          file: {
-            url: string;
-          };
-        };
-      } | null;
-      proficiency: string;
-    };
-  }[];
-};
+const ContactMe = (props: Props) => {
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
-function Skills() {
-  const [skills, setSkills] = useState<MachineLearningSkill[]>([]);
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(`Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`);
+    const mailtoLink = `mailto:salah322s1@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+  };
 
   useEffect(() => {
-    const fetchSkills = async () => {
-      try {
-        const response = await client.getEntries({ content_type: 'machineLearningSkills' });
-        const fetchedSkills = (response as unknown as ContentfulResponse).items.map((item) => ({
-          name: item.fields.name,
-          image: item.fields.image ? item.fields.image.fields.file.url : '',  // Handle possible null value
-          proficiency: item.fields.proficiency,
-        }));
-        setSkills(fetchedSkills);
-      } catch (error) {
-        console.error("Error fetching skills:", error);
-      }
+    const handleResize = () => {
+      setViewportHeight(window.innerHeight);
     };
 
-    fetchSkills();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
-      <div className="relative flex flex-col items-center justify-center min-h-screen h-full py-10 overflow-hidden">
-        <div className='flex flex-col items-center w-full mx-auto'>
-          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-lg  lg:text-3xl">MACHINE-LEARNING SKILLS</h3>
-
-        </div>
-        <div className="flex flex-col items-center justify-center flex-grow w-full pt-12">
-          <div className="grid grid-cols-3 gap-7 place-items-center mt-5 lg:mt-10 p-4 w-full">
-            {skills.map((skill, index) => (
-                <div key={index} className="group relative flex cursor-pointer">
-                  <img
-                      src={skill.image}
-                      alt={skill.name}
-                      className="rounded-full object-cover w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out"
-                  />
-                  <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
-                    <div className="flex items-center justify-center h-full">
-                      <p className="text-3xl font-bold text-black opacity-100">{skill.proficiency}</p>
-                    </div>
-                  </div>
-                </div>
-            ))}
+    <div
+      className="h-screen flex relative flex-col text-center md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      style={{ height: viewportHeight }}
+    >
+      <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Contact</h3>
+      <div className="flex flex-col space-y-10">
+        <div className="flex flex-col space-y-10 mt-10">
+          <div className="flex items-center space-x-5 justify-center">
+            <EnvelopeIcon className="text-[#66fcf1] h-7 w-7 animate-pulse" />
+            <p className="text-2xl">salah322s1@gmail.com</p>
+          </div>
+          <div className="flex items-center space-x-5 justify-center">
+            <MapIcon className="text-[#66fcf1] h-7 w-7 animate-pulse" />
+            <p className="text-2xl">Kuala Lumpur, Malaysia</p>
           </div>
         </div>
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-2 w-fit mx-auto max-w-md">
+          <div className="flex space-x-2">
+            <input
+              {...register('name', { required: 'Name is required' })}
+              placeholder="Name"
+              className={`contactInput w-full ${errors.name ? 'border-red-500' : ''}`}
+              type="text"
+            />
+            <input
+              {...register('email', { required: 'Email is required' })}
+              placeholder="Email"
+              className={`contactInput w-full ${errors.email ? 'border-red-500' : ''}`}
+              type="email"
+            />
+          </div>
+          <input
+            {...register('subject', { required: 'Subject is required' })}
+            placeholder="Subject"
+            className={`contactInput w-full ${errors.subject ? 'border-red-500' : ''}`}
+            type="text"
+          />
+          <textarea
+            {...register('message', { required: 'Message is required' })}
+            placeholder="Message"
+            className={`contactInput w-full ${errors.message ? 'border-red-500' : ''}`}
+          />
+          <button type="submit" className="bg-[#66fcf1] py-5 px-10 rounded-md text-black font-bold text-lg">
+            Submit
+          </button>
+          {errors.name && <p className="text-red-500 text-xs">{errors.name.message}</p>}
+          {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
+          {errors.subject && <p className="text-red-500 text-xs">{errors.subject.message}</p>}
+          {errors.message && <p className="text-red-500 text-xs">{errors.message.message}</p>}
+        </form>
       </div>
+    </div>
   );
-}
+};
 
-export default Skills;
+export default ContactMe;

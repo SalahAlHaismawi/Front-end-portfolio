@@ -2,15 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Setup from '../public/Setup.png';
-import DeskGif from '../public/Desk.gif'; // Import the GIF
 
 type Props = {};
 
 export default function About({}: Props) {
     return (
         <div className="relative flex flex-col h-screen text-center md:text-left w-full mx-auto items-center justify-center gap-5">
-            <div className="absolute top-14">
-                <h3 className="uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">About</h3>
+            <div className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-sm lg:text-3xl">
+                <h3>ABOUT</h3>
             </div>
 
             <motion.div

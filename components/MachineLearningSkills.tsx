@@ -46,11 +46,11 @@ function Skills() {
 
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-full py-10 overflow-hidden">
-        <div className='flex flex-col items-center w-full mx-auto'>
-          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-lg  lg:text-3xl">MACHINE LEARNING SKILLS</h3>
+        <div className='flex flex-col items-centter w-full mx-auto'>
+          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-sm  lg:text-3xl">MACHINE LEARNING SKILLS</h3>
 
         </div>
-        <div className="flex flex-col items-center justify-center flex-grow w-full pt-12">
+        <div className="flex flex-col items-center justify-center flex-grow w-full ">
           <div className="grid grid-cols-3 gap-7 place-items-center mt-5 lg:mt-10 p-4 w-full">
             {skills.map((skill, index) => (
                 <div key={index} className="group relative flex cursor-pointer">

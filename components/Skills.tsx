@@ -46,9 +46,8 @@ function Skills() {
 
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-full py-10 overflow-hidden">
-        <div className='flex flex-col items-center w-full mx-auto'>
-          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-lg  lg:text-3xl">FULL-STACK
-            SKILLS</h3>
+        <div className='flex flex-col items-centter w-full mx-auto'>
+          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-sm  lg:text-3xl">FULL-STACK SKILLS</h3>
 
         </div>
         <div className="flex flex-col items-center justify-center flex-grow w-full pt-12">
@@ -60,7 +59,8 @@ function Skills() {
                       alt={skill.name}
                       className="rounded-full object-cover w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out"
                   />
-                  <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
+                  <div
+                      className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0">
                     <div className="flex items-center justify-center h-full">
                       <p className="text-3xl font-bold text-black opacity-100">{skill.proficiency}</p>
                     </div>

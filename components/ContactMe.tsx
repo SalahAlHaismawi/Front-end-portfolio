@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PhoneIcon, MapIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import { MapIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Inputs = {
@@ -40,7 +40,7 @@ const ContactMe = (props: Props) => {
 
   return (
     <div
-      className="h-screen flex relative flex-col text-center md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      className="flex relative flex-col text-center md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
       style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
     >
       <h3 className="absolute top-16 uppercase tracking-[20px] text-[#66fcf1] text-xl lg:text-3xl">Contact</h3>

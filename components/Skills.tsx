@@ -47,7 +47,7 @@ function Skills() {
   return (
       <div className="relative flex flex-col items-center justify-center min-h-screen h-full py-10 overflow-hidden">
         <div className='flex flex-col items-centter w-full mx-auto'>
-          <h3 className="absolute top-10 pt-10 tracking-[22px] text-[#66fcf1] text-center text-sm  lg:text-3xl">FULL-STACK SKILLS</h3>
+          <h3 className=" pt-10 tracking-[22px] text-[#66fcf1] text-center text-sm  lg:text-3xl">FULL-STACK SKILLS</h3>
 
         </div>
         <div className="flex flex-col items-center justify-center flex-grow w-full pt-12">
